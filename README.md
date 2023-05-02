@@ -1,35 +1,42 @@
 # Distance Loss
 
-This repository contains an implementation of a custom loss function, called "distance loss," for use in PyTorch.
+This README file provides information about the `distance_loss` Python package, which is built using the provided `setup.py` script.
+
+## Overview
+
+The `distance_loss` package is an extension for PyTorch that provides functionality to compute distance-based losses. This package is built using a combination of C++ and CUDA code for optimal performance on systems with NVIDIA GPUs.
+
+## Requirements
+
+- Python 3.6 or higher
+- PyTorch 1.0 or higher
+- CUDA Toolkit (if using NVIDIA GPUs)
 
 ## Installation
 
-To install the `distance_loss` package, run the following command:
+To install the `distance_loss` package, follow these steps:
 
-```python
-pip install distance_loss
-```
-
-
-## Usage
-
-To use the `distance_loss` function in your PyTorch project, simply import it as follows:
-
-```python
-import distance_loss
-```
-
-
-You can then use the `distance_loss` function as a loss function in your PyTorch model.
-
-## Building from Source
-
-If you would like to build the `distance_loss` package from source, you can run the following command:
+1. Clone the repository or download the source code.
+2. Navigate to the root directory of the project, where the `setup.py` script is located.
+3. Run the following command to build and install the package:
 
 ```bash
 python setup.py build_ext --inplace
 ```
 
-## Contributing
+This command compiles the C++ and CUDA code and creates a Python extension that can be imported as a regular Python package.
 
-If you would like to contribute to the development of the `distance_loss` package, please open a pull request or submit an issue on the [GitHub repository](https://github.com/chandlerbing65nm/distance_loss).
+## Usage
+
+After installation, you can use the `distance_loss` package in your Python scripts by importing it:
+```python
+import distance_loss
+```
+
+Refer to the package documentation for detailed information on using the provided functionality to compute distance-based losses in your machine learning models.
+
+## Troubleshooting
+
+If you encounter issues during the installation process, make sure you have the correct versions of Python, PyTorch, and the CUDA Toolkit installed on your system. Also, double-check that your environment variables are correctly set up to point to the appropriate locations for your CUDA installation.
+
+If you still encounter issues, please consult the package documentation and seek support from the package maintainers or the community.
