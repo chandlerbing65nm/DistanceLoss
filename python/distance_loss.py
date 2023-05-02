@@ -31,6 +31,3 @@ class DistanceLoss(torch.nn.Module):
     def forward(self, input, point):
         return _distance_loss(input, point)
 
-    def backward(self, loss, input, point):
-        grad_input, _ = torch.autograd.grad(loss, input, create_graph=True)
-        return grad_input
