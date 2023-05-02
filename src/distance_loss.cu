@@ -40,7 +40,6 @@ __global__ void distance_loss_backward_kernel(
   }
 }
 
-
 at::Tensor distance_loss_forward_cuda(const at::Tensor& input, const at::Tensor& point) {
   const auto num_pixels = input.size(0);
   auto output = at::zeros({num_pixels}, input.options());
@@ -56,8 +55,13 @@ at::Tensor distance_loss_forward_cuda(const at::Tensor& input, const at::Tensor&
   }));
 
   cudaDeviceSynchronize();
-  return output;
+
+  // Calculate the average distance by summing up the distances and dividing by the number of pixels.
+  auto average_distance = output.sum() / num_pixels;
+
+  return average_distance;
 }
+
 
 at::Tensor distance_loss_backward_cuda(const at::Tensor& grad_output, const at::Tensor& input, const at::Tensor& point) {
   const auto num_pixels = input.size(0);
