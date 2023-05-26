@@ -1,4 +1,4 @@
-# Distance Loss
+# Naive Distance Loss
 
 This README file provides information about the `distance_loss` Python package, which is built using the provided `setup.py` script.
 
